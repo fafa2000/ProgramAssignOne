@@ -4,16 +4,17 @@ package ProgrammingAssignment;
 /**
  * @author Fatemeh MK
  * Created: October 14, 2017
- * Last modified: oct 17, 2017
+ * Last modified: Oct 19, 2017
  */
 
 import java.util.Scanner;
 import java.util.InputMismatchException;
+import java.util.Collections;
 
 public class MyClass {
     
     public static void main(String[] args) {
-
+        
         System.out.println("Hi there!\nThis program will calculate the area of a 2D shape of your choice\n");
         try { 
             Thread.sleep(500); 
@@ -33,7 +34,9 @@ public class MyClass {
                //If circle was chosen
                case "a":  
                    Circle circ= new Circle();
-                   System.out.println("\nThe area of a circle is found by squaring its radius and multiplying it by the number Pi.");
+                   // creates a string made up of 100 copies of string "*"
+                   System.out.println(String.join("~",Collections.nCopies(100,"*"))); 
+                   System.out.println("The area of a circle is found by squaring its radius and multiplying it by the number Pi.");
                    System.out.println("\nPlease provide the required measurements");
                   
                    //to make sure user enters a number and not a string or char
@@ -58,12 +61,14 @@ public class MyClass {
                    }
                    
                    System.out.println("\nThe area of the circle is " + String.format("%.2f", circ.area()));
+                   System.out.println(String.join("~",Collections.nCopies(100,"*")));                    
                    break;
 
                //If rectangle was chosen    
                case "b": 
                    Rectangle rect= new Rectangle();
-                   System.out.println("\nThe area of a rectangle is found by multiplying its length and width by each other.");
+                   System.out.println(String.join("~",Collections.nCopies(100,"*")));                    
+                   System.out.println("The area of a rectangle is found by multiplying its length and width by each other.");
                    System.out.println("\nPlease provide the required measurements");
                    
                    //each input needed seperate try statement in order to work properly
@@ -97,12 +102,14 @@ public class MyClass {
                    }
                    
                    System.out.println("\nThe area of the rectangle is " + String.format("%.2f", rect.area()));
+                   System.out.println(String.join("~",Collections.nCopies(100,"*")));                    
                    break;
                    
                    
                //If triangle was chosen
                case "c": 
                    Triangle tria = new Triangle();
+                   System.out.println(String.join("~",Collections.nCopies(100,"*")));                    
                    System.out.println("\nThe area of a triangle is found by multiplying its base and height by each other, and then dividing the product by 2.");
                    System.out.println("\nPlease provide the required measurements");   
                    
@@ -136,6 +143,7 @@ public class MyClass {
                    } catch (InterruptedException e) {
                    }
                    System.out.println("\nThe area of the triangle is " + String.format("%.2f", tria.area()));
+                   System.out.println(String.join("~",Collections.nCopies(100,"*")));                    
                    break;
 
                default: 
